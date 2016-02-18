@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+    <!-- The ng-app="myApp" custom attribute tells angular that this entire view (inside the <html> tags) is to be controlled by the angular app "myApp". In other words this view (this web page) is now connected to the variable
+    "myApp" in the global variable namespace. See the file app.js to see this variable. -->
+    <head>
+        <title>Learn and understand AngularJS</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        
+        <!-- Load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        
+        <style>
+            html, body, input, select, textarea
+            {
+                font-size: 1.05em;
+            }
+        </style>
+        
+        <!-- Load angular via CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar nabvar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">AngularJS</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><i class="fa fa-home"></i></a> Home</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="container">
+            <!-- Now we tie the angular mainController controller to this part of our view -->
+            <div ng-controller="mainController">
+                <form name="myForm">
+                   <label>
+                      Enter text:
+                      <input type="text" ng-model="field" name="myField" required minlength="5" />
+                    </label>
+                    <div ng-messages="myForm.myField.$error" role="alert">
+                      <div class="alert alert-danger" ng-message="required">You did not enter a field</div>
+                      <div class="alert alert-danger" ng-message="minlength">
+                        The value entered is too short
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
