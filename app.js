@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', []);
 
 
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($scope, $filter, $timeout) {
     
     $scope.handle = '';
     
@@ -15,12 +15,10 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
         console.log('New: ' + newValue);
     });
     
-    setTimeout(function() {
+    $timeout(function() {
         
-        $scope.$apply(function() {
         $scope.handle = 'New Twitter Handle';
         console.log('Scope changed!');
-        });
         
     }, 3000);
     
