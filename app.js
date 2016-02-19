@@ -15,4 +15,13 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
         console.log('New: ' + newValue);
     });
     
+    setTimeout(function() {
+        
+        $scope.$apply(function() {
+        $scope.handle = 'New Twitter Handle';
+        console.log('Scope changed!');
+        });
+        
+    }, 3000);
+    
 }]);
