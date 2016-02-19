@@ -1,9 +1,18 @@
-var tb = document.getElementById("name");
+var myApp = angular.module('myApp', []);
 
-/*
-This is an event listener that watches for key press events
-on our text box.
-*/
-tb.addEventListener("keypress", function(event) {
-    console.log('Pressed!');
-});
+
+myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+    
+    $scope.handle = '';
+    
+    $scope.lowerCaseHandle = function () {
+      return $filter('lowercase')($scope.handle);  
+    };
+    
+    $scope.$watch('handle', function(newValue, oldValue) {
+        console.info('Changed!');
+        console.log('Old: ' + oldValue);
+        console.log('New: ' + newValue);
+    });
+    
+}]);
