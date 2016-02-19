@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="myApp">
+<html lang="en-us">
     <!-- The ng-app="myApp" custom attribute tells angular that this entire view (inside the <html> tags) is to be controlled by the angular app "myApp". In other words this view (this web page) is now connected to the variable
     "myApp" in the global variable namespace. See the file app.js to see this variable. -->
     <head>
@@ -21,7 +21,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
-        <script src="app.js"></script>
     </head>
     
     <body>
@@ -39,17 +38,12 @@
         </header>
         
         <div class="container">
-            <!-- Now we tie the angular mainController controller to this part of our view -->
-            <div ng-controller="mainController">
-                <div>
-                    <label>What is your twitter handle?</label>
-                    <input type="text" ng-model="handle" />
-                    
-                    <hr />
-                    
-                    <h1>twitter.com/{{ lowerCaseHandle() }}</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" id="name" />
                 </div>
             </div>
         </div>
+        <script src="app.js"></script>
     </body>
 </html>
