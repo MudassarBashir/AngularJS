@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', []);
 
 
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter, $timeout) {
+myApp.controller('mainController', ['$scope', '$filter', '$http', function($scope, $filter, $http) {
     
     $scope.handle = '';
     
@@ -11,20 +11,11 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
     
     $scope.characters = 5;
     
-    var rulesRequest = new XMLHttpRequest();
-    
-    rulesRequest.onreadystatechange = function () {
-        
-        $scope.$apply(function () {
-            if (rulesRequest.readyState == 4 && rulesRequest.status == 200) {
-                $scope.rules = JSON.parse(rulesRequest.responseText); 
-            }
+    $http.get('http://localhost:8080/rest/index')
+        .success(function(result) {
+           $scope.rules = result; 
+        })
+        .error(function(data, status) {
+            console.log(data);
         });
-    }
-    
-    rulesRequest.open("GET", "http://localhost:8080/rest/index",
-                     true);
-    rulesRequest.send();
-    
-    
 }]);
