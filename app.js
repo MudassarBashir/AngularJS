@@ -1,14 +1,5 @@
-var myApp = angular.module('myApp', []);
-
-
-myApp.controller('mainController', ['$scope', function($scope) {
+window.addEventListener('hashchange', function() {
     
-    $scope.name = 'Main';
+    console.log('Hash changed!: ' + window.location.hash);
     
-}]);
-
-myApp.controller('secondController', ['$scope', function($scope) {
-    
-    $scope.name = 'Second';
-    
-}]);
+});
