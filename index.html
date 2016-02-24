@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" ng-app="myApp">
+    <!-- The ng-app="myApp" custom attribute tells angular that this entire view (inside the <html> tags) is to be controlled by the angular app "myApp". In other words this view (this web page) is now connected to the variable
+    "myApp" in the global variable namespace. See the file app.js to see this variable. -->
     <head>
         <title>Learn and understand AngularJS</title>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -15,6 +17,10 @@
             }
         </style>
         
+        <!-- Load angular via CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
     </head>
     
     <body>
@@ -32,66 +38,10 @@
         </header>
         
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="#/bookmark/1">Go to bookmark.</a>
-                    <p>
-                        Lorem ipsum dolor sit amet, an per diam disputando, ius dictas propriae in. Eu nulla noster senserit pri, ea per movet libris malorum, his no mutat eleifend. Labitur sanctus suavitate at vix, ius te nobis soleat populo. Ne amet assentior his, causae qualisque cu eum.
-
-Nam ut brute luptatum, ex ullum mollis animal duo. Vel tacimates repudiare eu. His ea eius laboramus, his nusquam splendide ne. In mea novum efficiantur, mea ei graeci iracundia. Eam sint liber ei.
-
-Ut mel quod paulo elitr, eius dicam vocent pri cu. Sit eu porro congue. Pro ad voluptua accommodare, vis novum regione et. In suas dicta prompta nec, esse gubergren vix eu. Doming noluisse quaerendum qui ad.
-
-Te quo percipit consetetur ullamcorper. Eum quidam dictas abhorreant an, ornatus voluptatibus an qui. Eu torquatos prodesset duo, veritus consequuntur vix ne. An odio volumus sed. Timeam iracundia nec in, eos ex saepe fastidii consequat, eu vel vocent lobortis definitionem. Habemus placerat cu eum, quas quidam usu ex.
-
-Modus verterem ut mea, omnes vitae tritani vel in. His dicat partiendo an, facilisis forensibus liberavisse cum an. Affert consectetuer ea eam. Qui eros omittam mandamus no. Ius ut maiorum imperdiet. Liber consul salutandi nec cu.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, an per diam disputando, ius dictas propriae in. Eu nulla noster senserit pri, ea per movet libris malorum, his no mutat eleifend. Labitur sanctus suavitate at vix, ius te nobis soleat populo. Ne amet assentior his, causae qualisque cu eum.
-
-Nam ut brute luptatum, ex ullum mollis animal duo. Vel tacimates repudiare eu. His ea eius laboramus, his nusquam splendide ne. In mea novum efficiantur, mea ei graeci iracundia. Eam sint liber ei.
-
-Ut mel quod paulo elitr, eius dicam vocent pri cu. Sit eu porro congue. Pro ad voluptua accommodare, vis novum regione et. In suas dicta prompta nec, esse gubergren vix eu. Doming noluisse quaerendum qui ad.
-
-Te quo percipit consetetur ullamcorper. Eum quidam dictas abhorreant an, ornatus voluptatibus an qui. Eu torquatos prodesset duo, veritus consequuntur vix ne. An odio volumus sed. Timeam iracundia nec in, eos ex saepe fastidii consequat, eu vel vocent lobortis definitionem. Habemus placerat cu eum, quas quidam usu ex.
-
-Modus verterem ut mea, omnes vitae tritani vel in. His dicat partiendo an, facilisis forensibus liberavisse cum an. Affert consectetuer ea eam. Qui eros omittam mandamus no. Ius ut maiorum imperdiet. Liber consul salutandi nec cu.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, an per diam disputando, ius dictas propriae in. Eu nulla noster senserit pri, ea per movet libris malorum, his no mutat eleifend. Labitur sanctus suavitate at vix, ius te nobis soleat populo. Ne amet assentior his, causae qualisque cu eum.
-
-Nam ut brute luptatum, ex ullum mollis animal duo. Vel tacimates repudiare eu. His ea eius laboramus, his nusquam splendide ne. In mea novum efficiantur, mea ei graeci iracundia. Eam sint liber ei.
-
-Ut mel quod paulo elitr, eius dicam vocent pri cu. Sit eu porro congue. Pro ad voluptua accommodare, vis novum regione et. In suas dicta prompta nec, esse gubergren vix eu. Doming noluisse quaerendum qui ad.
-
-Te quo percipit consetetur ullamcorper. Eum quidam dictas abhorreant an, ornatus voluptatibus an qui. Eu torquatos prodesset duo, veritus consequuntur vix ne. An odio volumus sed. Timeam iracundia nec in, eos ex saepe fastidii consequat, eu vel vocent lobortis definitionem. Habemus placerat cu eum, quas quidam usu ex.
-
-Modus verterem ut mea, omnes vitae tritani vel in. His dicat partiendo an, facilisis forensibus liberavisse cum an. Affert consectetuer ea eam. Qui eros omittam mandamus no. Ius ut maiorum imperdiet. Liber consul salutandi nec cu.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, an per diam disputando, ius dictas propriae in. Eu nulla noster senserit pri, ea per movet libris malorum, his no mutat eleifend. Labitur sanctus suavitate at vix, ius te nobis soleat populo. Ne amet assentior his, causae qualisque cu eum.
-
-Nam ut brute luptatum, ex ullum mollis animal duo. Vel tacimates repudiare eu. His ea eius laboramus, his nusquam splendide ne. In mea novum efficiantur, mea ei graeci iracundia. Eam sint liber ei.
-
-Ut mel quod paulo elitr, eius dicam vocent pri cu. Sit eu porro congue. Pro ad voluptua accommodare, vis novum regione et. In suas dicta prompta nec, esse gubergren vix eu. Doming noluisse quaerendum qui ad.
-
-Te quo percipit consetetur ullamcorper. Eum quidam dictas abhorreant an, ornatus voluptatibus an qui. Eu torquatos prodesset duo, veritus consequuntur vix ne. An odio volumus sed. Timeam iracundia nec in, eos ex saepe fastidii consequat, eu vel vocent lobortis definitionem. Habemus placerat cu eum, quas quidam usu ex.
-
-Modus verterem ut mea, omnes vitae tritani vel in. His dicat partiendo an, facilisis forensibus liberavisse cum an. Affert consectetuer ea eam. Qui eros omittam mandamus no. Ius ut maiorum imperdiet. Liber consul salutandi nec cu.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, an per diam disputando, ius dictas propriae in. Eu nulla noster senserit pri, ea per movet libris malorum, his no mutat eleifend. Labitur sanctus suavitate at vix, ius te nobis soleat populo. Ne amet assentior his, causae qualisque cu eum.
-
-Nam ut brute luptatum, ex ullum mollis animal duo. Vel tacimates repudiare eu. His ea eius laboramus, his nusquam splendide ne. In mea novum efficiantur, mea ei graeci iracundia. Eam sint liber ei.
-
-Ut mel quod paulo elitr, eius dicam vocent pri cu. Sit eu porro congue. Pro ad voluptua accommodare, vis novum regione et. In suas dicta prompta nec, esse gubergren vix eu. Doming noluisse quaerendum qui ad.
-
-Te quo percipit consetetur ullamcorper. Eum quidam dictas abhorreant an, ornatus voluptatibus an qui. Eu torquatos prodesset duo, veritus consequuntur vix ne. An odio volumus sed. Timeam iracundia nec in, eos ex saepe fastidii consequat, eu vel vocent lobortis definitionem. Habemus placerat cu eum, quas quidam usu ex.
-
-Modus verterem ut mea, omnes vitae tritani vel in. His dicat partiendo an, facilisis forensibus liberavisse cum an. Affert consectetuer ea eam. Qui eros omittam mandamus no. Ius ut maiorum imperdiet. Liber consul salutandi nec cu.
-                    </p>
-                </div>
+           <div ng-controller="mainController">
+               
             </div>
+        </div>
         <script src="app.js"></script>
     </body>
 </html>
