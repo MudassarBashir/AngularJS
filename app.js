@@ -25,7 +25,7 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 
     $scope.name = 'Main';
     $log.main = 'Property from main';
-    $log.log($log);
+    $log.log($scope);
 
 }]);
 
@@ -33,6 +33,6 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
 
     $scope.num = $routeParams.num || 1;
     $log.second = 'Property from second';
-    $log.log($log);
+    $log.log($scope);
 
 }]);
