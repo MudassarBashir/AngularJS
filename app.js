@@ -20,19 +20,33 @@ myApp.config(function($routeProvider) {
         })
 });
 
+myApp.service('nameService', function() {
 
-myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+    var self = this;
+    this.name = 'John Doe';
 
-    $scope.name = 'Main';
-    $log.main = 'Property from main';
-    $log.log($scope);
+    this.namelength = function() {
+      return self.name.length;
+    };
+
+});
+
+myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
+
 
 }]);
 
-myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
+myApp.controller('secondController', ['$scope', '$log', '$routeParams', 'nameService', function($scope, $log, $routeParams, nameService) {
 
-    $scope.num = $routeParams.num || 1;
-    $log.second = 'Property from second';
-    $log.log($scope);
 
 }]);
+
+myApp.directive("searchResult", function () {
+
+    return {
+        restrict: 'AEM',
+        template: '<a href="#" class="list-group-item"><h4 class="list-group-item-heading">Doe, John</h4><p class="list-group-item-text">555 Main. St., New York, NY 11111</p></a>',
+        replace: true
+    }
+
+});
