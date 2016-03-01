@@ -33,13 +33,29 @@ myApp.service('nameService', function() {
 
 myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
 
-    $scope.person = {
-        name: "John Doe",
-        address: '555 Main. St.',
-        city: 'New York',
-        state: 'NY',
-        zip: '11111'
-    }
+    $scope.people = [
+        {
+            name: "John Doe",
+            address: '555 Main. St.',
+            city: 'New York',
+            state: 'NY',
+            zip: '11111'
+        },
+        {
+            name: "Jane Doe",
+            address: '333 Second St.',
+            city: 'Las Vegas',
+            state: 'NV',
+            zip: '77777'
+        },
+        {
+            name: "Aziz Mian",
+            address: 'Darbar-e-ilaahi',
+            city: 'Miami',
+            state: 'FL',
+            zip: '88888'
+        }
+    ]
 
     $scope.formattedAddress = function(person) {
 
@@ -63,6 +79,29 @@ myApp.directive("searchResult", function () {
         scope: {
             personObject: "=",
             formattedAddressFunction: "&"
+        },
+        compile: function(elem, attrs) {
+
+            console.log('Compiling...');
+            //elem.removeAttr('class');
+            console.log(elem);
+
+            return {
+
+                pre: function (scope, elements, attrs) {
+
+                    console.log('Pre-linking...');
+                    console.log(elements.html());
+
+                },
+
+                post: function (scope, elements, attrs) {
+
+                    console.log('Post-linking...');
+                    console.log(elements.html());
+
+                }
+            }
         }
     }
 
