@@ -49,8 +49,8 @@ myApp.controller('mainController', ['$scope', '$log', 'nameService', function($s
             zip: '77777'
         },
         {
-            name: "Aziz Mian",
-            address: 'Darbar-e-ilaahi',
+            name: "George Doe",
+            address: '6782 Cuba St.',
             city: 'Miami',
             state: 'FL',
             zip: '88888'
@@ -88,17 +88,17 @@ myApp.directive("searchResult", function () {
 
             return {
 
-                pre: function (scope, elements, attrs) {
-
-                    console.log('Pre-linking...');
-                    console.log(elements.html());
-
-                },
-
                 post: function (scope, elements, attrs) {
 
                     console.log('Post-linking...');
-                    console.log(elements.html());
+                    console.log(scope.personObject.name);
+
+                    if (scope.personObject.name == 'Jane Doe') {
+
+                        elements.removeAttr('class');
+                    }
+
+                    console.log(elements);
 
                 }
             }
