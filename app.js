@@ -80,18 +80,6 @@ myApp.directive("searchResult", function () {
             personObject: "=",
             formattedAddressFunction: "&"
         },
-        link: function (scope, elements, attrs) {
-
-            console.log('Post-linking...');
-            console.log(scope.personObject.name);
-
-            if (scope.personObject.name == 'Jane Doe') {
-
-                elements.removeAttr('class');
-            }
-
-            console.log(elements);
-
-        }
+        transclude: true
     }
 });
