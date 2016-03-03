@@ -29,7 +29,7 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 
     $scope.city = cityService.city;
     $scope.$watch('city', function() {
-        citySerivce.city = $scope.city;
+        cityService.city = $scope.city;
     });
 
 }]);
