@@ -66,6 +66,23 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
 
 }]);
 
+// Directives
+weatherApp.directive("weatherReport", function() {
+
+    return {
+        restrict: 'E',
+        templateUrl: 'directives/weatherReport.html',
+        replace: true,
+        scope: {
+            weatherDay: "=",
+            convertToFahrenheit: "&",
+            convertToPrettyDate: "&",
+            dateFormat: "@"
+        }
+    }
+
+});
+
 // api key
 // 8c6cbd6fb58035ffffaf257966bc6314
 /* Example forcast for Miami 7 days. http://api.openweathermap.org/data/2.5/forecast/daily?q=Miami&cnt=7&APPID=8c6cbd6fb58035ffffaf257966bc6314
